@@ -3,6 +3,7 @@ import reduxThunk from 'redux-thunk'
 
 import rootReducer from './reducers'
 
+// for TESTING
 export const middlewares = [reduxThunk]
 
 // redux devtools

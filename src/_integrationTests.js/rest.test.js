@@ -16,13 +16,13 @@ describe('fetchPosts action', () => {
 
         const expectedState = [{
             title: 'Example title 1',
-            body: 'Some Text'
+            desc: 'Some Text'
         },{
             title: 'Example title 2',
-            body: 'Some Text'
+            desc: 'Some Text'
         },{
             title: 'Example title 3',
-            body: 'Some Text'
+            desc: 'Some Text'
         }]
         const store = testStore()
 
@@ -33,7 +33,6 @@ describe('fetchPosts action', () => {
                 response: expectedState
             })
         })
-        console.log(fetchPost)
 
         return store.dispatch(fetchPost())
         .then(() => {

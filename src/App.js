@@ -17,19 +17,36 @@ const tempArr = [{
   onlineStatus: true
 }]
 
+const initialState = {
+  hideButton: false
+}
+
 class App extends Component {
 
   constructor(props) {
     super(props)
+    this.state = {
+      ...initialState
+    }
     this.fetch = this.fetch.bind(this)
   }
 
   fetch() {
     this.props.fetchPost()
+    this.updateState()
+  }
+
+  updateState () {
+    this.setState({ hideButton: !this.state.hideButton})
+  }
+
+  exampleMethod (num) {
+    return num + 1
   }
 
   render () {
     const { posts } = this.props
+    const { hideButton } = this.state
 
     const configButton = {
       text: 'Get items',
@@ -37,11 +54,11 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
+      <div className="App" data-test='app'>
         <Header />
         <section className="main">
           <Headline header="Posts" desc="Some text. Lorem ipsum dolor" tempArr={tempArr}/>
-          <Button {...configButton} />
+          {!hideButton && <Button {...configButton} />}
           {posts.length > 0 &&
             <div>
               {posts.map((post, index) => {

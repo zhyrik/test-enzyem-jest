@@ -19,9 +19,12 @@ describe('Button compoenent', () => {
     describe('rendders', () => {
 
       let wrapper
+      let mockFunk //for click
       beforeEach(() => {
+        mockFunk = jest.fn() // for click
         const props = {
-          text: 'test'
+          text: 'test',
+          emitEvent: mockFunk
         }
         wrapper = shallow(<Button {...props}/>)
       })
@@ -30,6 +33,15 @@ describe('Button compoenent', () => {
         const compoenent = findByTestAttr(wrapper, 'button')
         expect(compoenent.length).toBe(1)
       })
+
+      // test Button click
+      it('Should emit callback on click event', () => {
+        const button = findByTestAttr(wrapper, 'button');
+        button.simulate('click');
+        const callback = mockFunk.mock.calls.length;
+        expect(callback).toBe(1);
+      })
+
     })
   })
 })

@@ -12,7 +12,6 @@ export default class index extends Component {
   }
 
   submitEvent(){
-    console.log(this)
     if(this.props.emitEvent){
         this.props.emitEvent();
     }
