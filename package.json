@@ -37,7 +37,15 @@
   "devDependencies": {
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "husky": "^3.0.2",
     "jest-enzyme": "^7.0.2",
     "moxios": "^0.4.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test",
+      "...": "..."
+    }
   }
 }

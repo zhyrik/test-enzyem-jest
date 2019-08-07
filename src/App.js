@@ -9,6 +9,8 @@ import List from './components/list'
 
 import { fetchPost } from './store/actions/posts'
 
+// https://github.com/simpletut/Testing-React-Redux-with-Jest-and-Enzyme
+
 const tempArr = [{
   fName: 'Joe',
   lName: 'Bloggs',
