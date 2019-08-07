@@ -3,6 +3,8 @@ import reduxThunk from 'redux-thunk'
 
 import rootReducer from './reducers'
 
+export const middlewares = [reduxThunk]
+
 // redux devtools
 const composeEnhancers =
   typeof window === 'object' &&
@@ -12,7 +14,7 @@ const composeEnhancers =
     }) : compose;
 
 const enhancer = composeEnhancers(
-  applyMiddleware(reduxThunk ),
+  applyMiddleware(...middlewares ),
   // other store enhancers if any
 );
 

@@ -45,7 +45,6 @@ describe('Hedline component', () => {
 
     it('should render without errors', () => {
       const component = findByTestAttr(wrapper, 'headline')
-      console.log(component.html())
       expect(component.length).toBe(1)
     })
     it('shoud render h1', () => {

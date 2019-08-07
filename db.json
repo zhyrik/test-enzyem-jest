@@ -1,0 +1,7 @@
+{
+  "posts": [
+    { "id": 1, "title": "test 1", "author": "typicode", "desc": "some text" },
+    { "id": 2, "title": "test 2", "author": "typicode", "desc": "some text" },
+    { "id": 3, "title": "test 3", "author": "typicode", "desc": "some text" }
+  ]
+}
